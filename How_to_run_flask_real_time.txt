@@ -1,0 +1,21 @@
+The current recommended way is with the flask command line utility.
+
+https://flask.palletsprojects.com/en/1.1.x/quickstart/#debug-mode
+
+Example:
+
+$ export FLASK_APP=main.py
+$ export FLASK_ENV=development
+$ flask run
+or in one command:
+
+$ FLASK_APP=main.py FLASK_ENV=development flask run
+If you want different port than the default (5000) add --port option.
+
+Example:
+
+$ FLASK_APP=main.py FLASK_ENV=development flask run --port 8080
+More options are available with:
+
+$ flask run --help
+FLASK_APP can also be set to module:app or module:create_app instead of module.py. See https://flask.palletsprojects.com/en/1.1.x/cli/#application-discovery for a full explanation.
