@@ -1,10 +1,14 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask, redirect, url_for, request, render_template
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('login.html')
+
 @app.route('/user/<name>')
 def success(name):
-    return f'Welcome {name}'
+    return render_template('user.html', user = name)
 
 @app.route('/login', methods = ['POST', 'GET'])
 def login():
